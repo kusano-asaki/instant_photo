@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>ユーザー登録</h1>
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
@@ -11,6 +11,10 @@
 <% end %>
 <%= form_with(model: @user, local: true) do |f| %>
 <ul>
+  <li>
+    <%= f.label :profile_image %>
+    <%= f.file_field :face %>
+  </li>
   <li>
     <%= f.label :name %>
     <%= f.text_field :name %>

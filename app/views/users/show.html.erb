@@ -1,5 +1,9 @@
 <p><%= notice %></p>
-<h1><%= @user.name %>のページ</h1>
+<h1>ユーザー詳細</h1>
+<p>ユーザー名: <%= @user.name %></p>
 <p>メールアドレス: <%= @user.email %></p>
+<p>プロフィール画像: </p>
+<%= image_tag @user.face.url %><br>
 
-<%= link_to "編集する", edit_user_path(@user) %>
+<%= link_to "編集する", edit_user_path(@user) %><br>
+<%= link_to "新規投稿する", new_picture_path %>
