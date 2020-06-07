@@ -5,5 +5,9 @@
 <p>プロフィール画像: </p>
 <%= image_tag @user.face.url %><br>
 
-<%= link_to "編集する", edit_user_path(@user) %><br>
-<%= link_to "新規投稿する", new_picture_path %>
+<% if logged_in? %>
+  <% if @user.id == current_user.id %>
+    <%= link_to "編集する", edit_user_path(@user) %><br>
+      <%= link_to "新規投稿する", new_picture_path %>
+  <% end %>
+<% end %>
