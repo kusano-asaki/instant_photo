@@ -1,11 +1,13 @@
-<h1>ブログ一覧</h1>
+<h1>一覧</h1>
 <table>
   <tr>
-    <th>タイトル</th>
+    <th>ユーザー</th>
+    <th>画像</th>
     <th>内容</th>
   </tr>
 <% @pictures.each do |picture| %>
   <tr>
+    <td><%= picture.user.name %></td>
     <td><%= image_tag picture.image.url %></td>
     <td><%= picture.content %></td>
     <td><%= link_to '詳細', picture_path(picture.id) %></td>
