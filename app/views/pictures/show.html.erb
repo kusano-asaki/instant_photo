@@ -1,10 +1,14 @@
-<h1>ブログ詳細画面</h1>
-<p>image: <%= image_tag @picture.image.url %></p>
-<p>内容: <%= @picture.content %></p>
+<div class="card" style="width: 506px;>
+  <div class="bd-placeholder-img card-img-top">
+    <p>image: <%= image_tag @picture.image.url %></p>
+  </div>
+  <div class="card-body">
+    <p>内容: <%= @picture.content %></p>
+  </div>
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-secondary' %>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to 'お気に入りする', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-secondary' %>
   <% end %>
 <% end %>

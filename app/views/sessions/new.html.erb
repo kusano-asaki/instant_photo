@@ -3,12 +3,12 @@
 <ul>
   <li>
     <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class:"form-control" %>
   </li>
   <li>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class:"form-control" %>
   </li>
 </ul>
-  <%= f.submit "Log in" %>
+  <%= f.submit "Log in", class: "btn btn-secondary" %>
 <% end %>
