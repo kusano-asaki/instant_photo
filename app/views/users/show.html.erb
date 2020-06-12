@@ -1,14 +1,18 @@
-<p><%= notice %></p>
-<h1>ユーザー詳細</h1>
-<p>ユーザー名: <%= @user.name %></p>
-<p>メールアドレス: <%= @user.email %></p>
-<p>プロフィール画像: </p>
-<%= image_tag @user.face.url %><br>
+<div class="card" style="width: 306px;">
+  <div class="bd-placeholder-img card-img-top">
+    <p class="card-text">プロフィール画像: </p>
+    <%= image_tag @user.face.url %>
+  </div>
+  <div class="card-body">
+    <p class="card-text">ユーザー名: <%= @user.name %></p>
+    <p class="card-text">メールアドレス: <%= @user.email %></p>
+  </div>
+</div>
 
 <% if logged_in? %>
   <% if @user.id == current_user.id %>
-    <%= link_to "編集する", edit_user_path(@user) %><br>
-    <%= link_to "新規投稿する", new_picture_path %><br>
-    <%= link_to "投稿一覧へ", pictures_path %>
+    <%= link_to "編集する", edit_user_path(@user), class:"btn btn-secondary" %>
+    <%= link_to "新規投稿する", new_picture_path, class:"btn btn-outline-secondary" %>
+    <%= link_to "投稿一覧へ", pictures_path, class:"btn btn-outline-secondary" %>
   <% end %>
 <% end %>

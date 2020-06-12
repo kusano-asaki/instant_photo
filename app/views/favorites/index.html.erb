@@ -1,10 +1,8 @@
 <h2>お気に入り一覧</h2>
 <% @favorites.each do |favorite| %>
-<table>
-  <tr>
-    <th><%= favorite.picture.user.name %></th>
-    <th><%= favorite.picture.content %></th>
-    <th><%= image_tag(favorite.picture.image.url) if favorite.picture.image && favorite.picture.image.url %></th>
-  </tr>
-</table>
+<ul>
+  <li><%= image_tag(favorite.picture.image.url) if favorite.picture.image && favorite.picture.image.url %></li>
+  <li>ユーザー: <%= favorite.picture.user.name %></li>
+  <li>内容: <%= favorite.picture.content %></li>
+  </ul>
 <% end %>

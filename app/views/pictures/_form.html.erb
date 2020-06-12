@@ -10,14 +10,14 @@
     </div>
 <% end %>
   <div class="blog_title">
-    <%= form.label :image %>
+    <%= form.label :image %><br>
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
   <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :content %><br>
+    <%= form.text_field :content, class:"form-control" %>
   </div>
-  <%= form.submit %>
+    <%= form.submit class:"btn btn-secondary form_b new_b" %>
 <% end %>
